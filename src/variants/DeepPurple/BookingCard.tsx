@@ -13,13 +13,13 @@ export function BookingCard() {
         {/* Inputs */}
         <div className="space-y-6">
           <div className="border-b border-gray-200 pb-2">
-            <label className="block text-xs text-[#1565c0] font-medium mb-2 uppercase tracking-widest">
+            <label className="block text-xs text-[#6a1b9a] font-medium mb-2 uppercase tracking-widest">
               From
             </label>
             <input type="text" defaultValue="Sandton City, Johannesburg" className="w-full text-xl text-[#1a1a1a] placeholder-gray-300 outline-none font-serif bg-transparent" />
           </div>
           <div className="border-b border-gray-200 pb-2">
-            <label className="block text-xs text-[#1565c0] font-medium mb-2 uppercase tracking-widest">
+            <label className="block text-xs text-[#6a1b9a] font-medium mb-2 uppercase tracking-widest">
               To
             </label>
             <input type="text" placeholder="Enter destination" className="w-full text-xl text-[#1a1a1a] placeholder-gray-300 outline-none font-serif bg-transparent" />
@@ -31,11 +31,11 @@ export function BookingCard() {
           <span className="text-xs uppercase tracking-widest text-gray-500">
             Estimated Fare
           </span>
-          <span className="text-2xl font-serif text-[#1565c0]">R180–220</span>
+          <span className="text-2xl font-serif text-[#6a1b9a]">R180–220</span>
         </div>
 
         {/* CTA */}
-        <button className="w-full bg-[#1565c0] text-white py-4 px-6 flex justify-between items-center hover:bg-[#0d47a1] transition-colors group">
+        <button className="w-full bg-[#6a1b9a] text-white py-4 px-6 flex justify-between items-center hover:bg-[#4a148c] transition-colors group">
           <span className="text-sm font-medium tracking-wide uppercase">
             Request Driver
           </span>

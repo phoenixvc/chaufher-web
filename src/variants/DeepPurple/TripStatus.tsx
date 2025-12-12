@@ -40,7 +40,7 @@ export function TripStatus({
   }} className="mx-8 mb-8">
       <div className="border border-gray-200 p-6">
         <div className="flex items-start gap-4">
-          <Icon size={20} className="text-[#1565c0] mt-1" strokeWidth={1.5} />
+          <Icon size={20} className="text-[#6a1b9a] mt-1" strokeWidth={1.5} />
           <div className="flex-1">
             <h3 className="font-serif text-lg text-[#1a1a1a] mb-1">
               {config.title}

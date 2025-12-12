@@ -1,35 +1,35 @@
 import { useState } from 'react';
-import { EmpowermentPink } from './variants/EmpowermentPink';
-import { LuxuryPro } from './variants/LuxuryPro';
-import { TrustBlue } from './variants/TrustBlue';
-import { ModernChic } from './variants/ModernChic';
-type Variant = 'empowerment' | 'luxury' | 'trust' | 'modern';
+import { VibrantMagenta } from './variants/VibrantMagenta';
+import { SoftPink } from './variants/SoftPink';
+import { DeepPurple } from './variants/DeepPurple';
+import { GradientFusion } from './variants/GradientFusion';
+type Variant = 'vibrant' | 'soft' | 'deep' | 'fusion';
 export function App() {
-  const [activeVariant, setActiveVariant] = useState<Variant>('empowerment');
+  const [activeVariant, setActiveVariant] = useState<Variant>('vibrant');
   const renderVariant = () => {
     switch (activeVariant) {
-      case 'empowerment':
-        return <EmpowermentPink />;
-      case 'luxury':
-        return <LuxuryPro />;
-      case 'trust':
-        return <TrustBlue />;
-      case 'modern':
-        return <ModernChic />;
+      case 'vibrant':
+        return <VibrantMagenta />;
+      case 'soft':
+        return <SoftPink />;
+      case 'deep':
+        return <DeepPurple />;
+      case 'fusion':
+        return <GradientFusion />;
       default:
-        return <EmpowermentPink />;
+        return <VibrantMagenta />;
     }
   };
   const getBgColor = () => {
     switch (activeVariant) {
-      case 'empowerment':
+      case 'vibrant':
         return 'bg-gradient-to-br from-[#fef5fb] to-[#f5eeff]';
-      case 'luxury':
-        return 'bg-[#0a0a0a]';
-      case 'trust':
-        return 'bg-[#e3f2fd]';
-      case 'modern':
-        return 'bg-gradient-to-br from-[#fafafa] to-[#f5f5f5]';
+      case 'soft':
+        return 'bg-[#fff5f9]';
+      case 'deep':
+        return 'bg-[#f3e5f5]';
+      case 'fusion':
+        return 'bg-gradient-to-br from-[#fce4ec] to-[#f3e5f5]';
       default:
         return 'bg-gray-100';
     }
@@ -37,27 +37,29 @@ export function App() {
   return <div className={`min-h-screen w-full transition-colors duration-500 ${getBgColor()} relative flex items-center justify-center overflow-hidden`}>
       {/* Desktop Background Experience */}
       <div className="absolute inset-0 z-0 hidden lg:block">
-        {activeVariant === 'empowerment' && <div className="w-full h-full relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#d91e72]/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4"></div>
+        {activeVariant === 'vibrant' && <div className="w-full h-full relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#d91e72]/15 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4"></div>
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#6a1b9a]/10 rounded-full blur-[80px] -translate-x-1/4 translate-y-1/4"></div>
-            <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-[#d91e72]/5 rounded-full blur-xl"></div>
-            <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-[#6a1b9a]/5 rounded-full blur-xl"></div>
+            <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-[#d91e72]/8 rounded-full blur-xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-[#6a1b9a]/8 rounded-full blur-xl"></div>
           </div>}
 
-        {activeVariant === 'luxury' && <div className="w-full h-full relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#000000]"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#d4af37]"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-30"></div>
+        {activeVariant === 'soft' && <div className="w-full h-full relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#f48fb1]/15 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4"></div>
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#ec407a]/10 rounded-full blur-[80px] -translate-x-1/4 translate-y-1/4"></div>
+            <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-[#f48fb1]/10 rounded-full blur-xl"></div>
           </div>}
 
-        {activeVariant === 'trust' && <div className="w-full h-full relative bg-[#e3f2fd]">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1565c012_1px,transparent_1px),linear-gradient(to_bottom,#1565c012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1565c0]/5 rounded-full blur-[100px]"></div>
+        {activeVariant === 'deep' && <div className="w-full h-full relative bg-[#f3e5f5]">
+            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#6a1b9a]/10 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#4a148c]/8 rounded-full blur-[80px]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#6a1b9a08_1px,transparent_1px),linear-gradient(to_bottom,#6a1b9a08_1px,transparent_1px)] bg-[size:32px_32px]"></div>
           </div>}
 
-        {activeVariant === 'modern' && <div className="w-full h-full relative bg-gradient-to-br from-[#fafafa] to-[#f5f5f5]">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#d91e72]/5 rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#6a1b9a]/5 rounded-full blur-[100px]"></div>
+        {activeVariant === 'fusion' && <div className="w-full h-full relative bg-gradient-to-br from-[#fce4ec] to-[#f3e5f5]">
+            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#d91e72]/10 rounded-full blur-[120px]"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#6a1b9a]/10 rounded-full blur-[100px]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-[#d91e72]/5 to-[#6a1b9a]/5 rounded-full blur-3xl"></div>
           </div>}
       </div>
 
@@ -74,23 +76,23 @@ export function App() {
       {/* Variant Switcher (Desktop Only) */}
       <div className="fixed top-8 right-8 z-50 hidden lg:flex flex-col gap-3 bg-white/90 backdrop-blur-md p-2 rounded-2xl shadow-xl border border-gray-200/50">
         <div className="px-2 py-1 text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
-          Select Theme
+          ChaufHER Variants
         </div>
-        <button onClick={() => setActiveVariant('empowerment')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'empowerment' ? 'bg-gradient-to-r from-[#d91e72] to-[#c8175d] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+        <button onClick={() => setActiveVariant('vibrant')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'vibrant' ? 'bg-gradient-to-r from-[#d91e72] to-[#c8175d] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
           <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#d91e72] to-[#6a1b9a] border-2 border-white/50"></div>
-          <span className="font-medium">Empowerment Pink</span>
+          <span className="font-medium">Vibrant Magenta</span>
         </button>
-        <button onClick={() => setActiveVariant('luxury')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'luxury' ? 'bg-[#0a0a0a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
-          <div className="w-4 h-4 rounded-full bg-[#0a0a0a] border-2 border-[#d4af37]"></div>
-          <span className="font-medium">Luxury Pro</span>
+        <button onClick={() => setActiveVariant('soft')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'soft' ? 'bg-gradient-to-r from-[#f48fb1] to-[#ec407a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+          <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#f48fb1] to-[#ec407a] border-2 border-white/50"></div>
+          <span className="font-medium">Soft Pink</span>
         </button>
-        <button onClick={() => setActiveVariant('trust')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'trust' ? 'bg-[#1565c0] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
-          <div className="w-4 h-4 rounded-full bg-[#1565c0] border-2 border-white/50"></div>
-          <span className="font-medium">Trust Blue</span>
+        <button onClick={() => setActiveVariant('deep')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'deep' ? 'bg-[#6a1b9a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+          <div className="w-4 h-4 rounded-full bg-[#6a1b9a] border-2 border-white/50"></div>
+          <span className="font-medium">Deep Purple</span>
         </button>
-        <button onClick={() => setActiveVariant('modern')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'modern' ? 'bg-gradient-to-r from-[#d91e72] to-[#6a1b9a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
-          <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#fafafa] to-[#d91e72] border-2 border-gray-300"></div>
-          <span className="font-medium">Modern Chic</span>
+        <button onClick={() => setActiveVariant('fusion')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'fusion' ? 'bg-gradient-to-r from-[#d91e72] via-[#ba68c8] to-[#6a1b9a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+          <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#d91e72] via-[#ba68c8] to-[#6a1b9a] border-2 border-white/50"></div>
+          <span className="font-medium">Gradient Fusion</span>
         </button>
       </div>
 

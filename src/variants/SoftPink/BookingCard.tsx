@@ -16,14 +16,14 @@ export function BookingCard() {
         <div className="space-y-0">
           {/* Pickup Input */}
           <div className="relative group border-b border-white/10">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#d4af37] transform rotate-45"></div>
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#f48fb1] transform rotate-45"></div>
             <input type="text" placeholder="Current Location" className="w-full bg-transparent py-5 pl-10 pr-4 text-white placeholder:text-gray-500 outline-none font-medium text-lg focus:bg-white/5 transition-colors" defaultValue="Sandton City, Johannesburg" />
           </div>
 
           {/* Destination Input */}
           <div className="relative group">
             <div className="absolute left-0 top-1/2 -translate-y-1/2">
-              <MapPin size={18} className="text-[#d4af37]" />
+              <MapPin size={18} className="text-[#f48fb1]" />
             </div>
             <input type="text" placeholder="Where to?" className="w-full bg-transparent py-5 pl-10 pr-4 text-white placeholder:text-gray-500 outline-none font-medium text-lg focus:bg-white/5 transition-colors" />
           </div>
@@ -31,7 +31,7 @@ export function BookingCard() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-4 gap-2 mt-6">
-          {['Home', 'Work', 'Gym', 'Airport'].map(place => <button key={place} className="py-2.5 rounded-lg bg-white/5 text-gray-400 text-xs font-bold uppercase tracking-wider hover:bg-[#d4af37] hover:text-[#0a0a0a] transition-all">
+          {['Home', 'Work', 'Gym', 'Airport'].map(place => <button key={place} className="py-2.5 rounded-lg bg-white/5 text-gray-400 text-xs font-bold uppercase tracking-wider hover:bg-[#f48fb1] hover:text-[#fff5f9] transition-all">
               {place}
             </button>)}
         </div>
@@ -50,7 +50,7 @@ export function BookingCard() {
         </div>
 
         {/* CTA Button */}
-        <button className="w-full mt-4 bg-[#d4af37] hover:bg-[#b8860b] active:translate-y-0.5 transition-all text-[#0a0a0a] rounded-lg py-4 font-bold text-lg uppercase tracking-wide flex items-center justify-center gap-3 group shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+        <button className="w-full mt-4 bg-[#f48fb1] hover:bg-[#ec407a] active:translate-y-0.5 transition-all text-[#fff5f9] rounded-lg py-4 font-bold text-lg uppercase tracking-wide flex items-center justify-center gap-3 group shadow-[0_0_20px_rgba(212,175,55,0.3)]">
           <span>Request Ride</span>
           <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" strokeWidth={3} />
         </button>

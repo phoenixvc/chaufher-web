@@ -28,11 +28,11 @@ export function DriverSpotlight() {
           <h2 className="text-lg font-bold text-white uppercase tracking-wider">
             Top Rated Drivers
           </h2>
-          <p className="text-xs text-[#d4af37] font-mono uppercase tracking-widest mt-1">
+          <p className="text-xs text-[#f48fb1] font-mono uppercase tracking-widest mt-1">
             All verified • Female drivers
           </p>
         </div>
-        <button className="text-[#d4af37] text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+        <button className="text-[#f48fb1] text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
           View All
         </button>
       </div>
@@ -42,8 +42,8 @@ export function DriverSpotlight() {
             <div className="relative">
               <img src={driver.image} alt={driver.name} className="w-14 h-14 rounded-md object-cover grayscale contrast-125" />
               {/* Safety Badge - Guardrail: Safety signals explicit */}
-              {driver.verified && <div className="absolute -top-1 -right-1 bg-[#d4af37] rounded p-0.5 shadow-sm">
-                  <ShieldCheck size={12} className="text-[#0a0a0a]" strokeWidth={3} />
+              {driver.verified && <div className="absolute -top-1 -right-1 bg-[#f48fb1] rounded p-0.5 shadow-sm">
+                  <ShieldCheck size={12} className="text-[#fff5f9]" strokeWidth={3} />
                 </div>}
             </div>
             <div>
@@ -52,8 +52,8 @@ export function DriverSpotlight() {
               </h3>
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-0.5">
-                  <Star size={10} className="text-[#d4af37] fill-[#d4af37]" />
-                  <span className="text-xs font-bold text-[#d4af37]">
+                  <Star size={10} className="text-[#f48fb1] fill-[#f48fb1]" />
+                  <span className="text-xs font-bold text-[#f48fb1]">
                     {driver.rating}
                   </span>
                 </div>

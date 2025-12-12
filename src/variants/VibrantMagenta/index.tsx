@@ -4,7 +4,7 @@ import { DriverSpotlight } from './DriverSpotlight';
 import { TrustBadges } from './TrustBadges';
 import { RecentTrips } from './RecentTrips';
 import { BottomNav } from './BottomNav';
-export function EmpowermentPink() {
+export function VibrantMagenta() {
   return <div className="min-h-screen bg-[#fef5fb] pb-24 font-sans text-[#2d2d2d] selection:bg-[#d91e72]/20 relative overflow-hidden">
       <div className="relative z-10">
         <Hero />

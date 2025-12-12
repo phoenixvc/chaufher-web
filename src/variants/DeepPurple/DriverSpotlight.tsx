@@ -21,7 +21,7 @@ const drivers = [{
 export function DriverSpotlight() {
   return <section className="py-12 px-8 border-t border-gray-100">
       <div className="mb-8">
-        <h2 className="text-xs font-bold text-[#1565c0] uppercase tracking-widest mb-1">
+        <h2 className="text-xs font-bold text-[#6a1b9a] uppercase tracking-widest mb-1">
           Available Drivers
         </h2>
         <p className="text-xs text-gray-400 uppercase tracking-widest">
@@ -35,7 +35,7 @@ export function DriverSpotlight() {
               <div className="relative">
                 <img src={driver.image} alt={driver.name} className="w-10 h-10 rounded-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
                 {/* Safety Badge - Guardrail: Safety signals explicit */}
-                {driver.verified && <div className="absolute -top-0.5 -right-0.5 bg-[#1565c0] rounded-full p-0.5">
+                {driver.verified && <div className="absolute -top-0.5 -right-0.5 bg-[#6a1b9a] rounded-full p-0.5">
                     <ShieldCheck size={8} className="text-white" strokeWidth={3} />
                   </div>}
               </div>

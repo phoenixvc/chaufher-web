@@ -4,8 +4,8 @@ import { DriverSpotlight } from './DriverSpotlight';
 import { TrustBadges } from './TrustBadges';
 import { RecentTrips } from './RecentTrips';
 import { BottomNav } from './BottomNav';
-export function ModernChic() {
-  return <div className="min-h-screen bg-gradient-to-br from-[#fafafa] to-[#f0f0f0] pb-24 font-sans text-[#1a1a1a] relative overflow-hidden">
+export function GradientFusion() {
+  return <div className="min-h-screen bg-gradient-to-br from-[#fce4ec] to-[#f3e5f5] pb-24 font-sans text-[#1a1a1a] relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#d91e72]/5 rounded-full blur-3xl"></div>

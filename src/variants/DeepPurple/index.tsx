@@ -4,8 +4,8 @@ import { DriverSpotlight } from './DriverSpotlight';
 import { TrustBadges } from './TrustBadges';
 import { RecentTrips } from './RecentTrips';
 import { BottomNav } from './BottomNav';
-export function TrustBlue() {
-  return <div className="min-h-screen bg-[#f8fafb] pb-24 font-sans text-[#1a1a1a] relative overflow-hidden">
+export function DeepPurple() {
+  return <div className="min-h-screen bg-[#f3e5f5] pb-24 font-sans text-[#1a1a1a] relative overflow-hidden">
       <div className="relative z-10">
         <Hero />
 

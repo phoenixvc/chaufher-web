@@ -19,7 +19,7 @@ export function TrustBadges() {
         {stats.map((stat) => {
         const Icon = stat.icon;
         return <div key={stat.label} className="flex-1 bg-[#232946] p-3 rounded-lg border border-white/5 text-center">
-              <Icon size={16} className="text-[#d4af37] mx-auto mb-2" />
+              <Icon size={16} className="text-[#f48fb1] mx-auto mb-2" />
               <div className="text-xl font-bold text-white font-mono mb-1">
                 {stat.value}
               </div>

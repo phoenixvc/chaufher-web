@@ -12,29 +12,29 @@ export function TripStatus({
       icon: Clock,
       title: 'FINDING DRIVER',
       subtitle: 'Usually takes less than 2 minutes',
-      color: '#d4af37',
-      bgColor: 'bg-[#d4af37]/10'
+      color: '#f48fb1',
+      bgColor: 'bg-[#f48fb1]/10'
     },
     accepted: {
       icon: CheckCircle,
       title: 'DRIVER CONFIRMED',
       subtitle: 'Sarah M. is on the way • 5 min away',
-      color: '#d4af37',
-      bgColor: 'bg-[#d4af37]/10'
+      color: '#f48fb1',
+      bgColor: 'bg-[#f48fb1]/10'
     },
     arriving: {
       icon: Navigation,
       title: 'ARRIVING SOON',
       subtitle: 'Sarah M. is 1 minute away',
-      color: '#d4af37',
-      bgColor: 'bg-[#d4af37]/10'
+      color: '#f48fb1',
+      bgColor: 'bg-[#f48fb1]/10'
     },
     started: {
       icon: Navigation,
       title: 'TRIP IN PROGRESS',
       subtitle: 'Arriving at destination in 12 minutes',
-      color: '#d4af37',
-      bgColor: 'bg-[#d4af37]/10'
+      color: '#f48fb1',
+      bgColor: 'bg-[#f48fb1]/10'
     }
   };
   const config = statusConfig[state];
