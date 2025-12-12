@@ -1,261 +1,228 @@
-# ChaufHER Web
+# ChaufHER Web — Operational Portal
 
-A browser-based operational portal empowering guardians, operators, administrators, and drivers to ensure safe, reliable, and transparent ride management.
+A browser-based operational platform empowering guardians, operators, administrators, and drivers to ensure safe, reliable, and transparent ride management.
 
-## Overview
+---
 
-ChaufHER Web complements the ChaufHER mobile experience by offering robust tools for real-time ride oversight, incident escalation, organizational controls, and compliance reporting. The platform uniquely addresses the needs of stressed shift workers seeking safe commutes, guardians arranging transport for dependents, and administrators managing drivers and routes—all through an interface optimized for clarity and urgent operational response.
+## Table of Contents
 
-## Infrastructure
+### Business & Product
+- [Product Overview](#product-overview)
+- [Purpose & Value](#purpose--value)
+- [Target Audience](#target-audience)
+- [Expected Outcomes](#expected-outcomes)
+- [Multi-Repo Architecture](#multi-repo-architecture)
 
-This project uses centralized infrastructure and deployment workflows defined in the ChaufHER Infra repository: https://github.com/phoenixvc/chaufher-infra. For frontend integration guidance, environment variables, and deployment checklists see: https://github.com/phoenixvc/chaufher-infra/blob/main/MOBILE_CHECKLIST.md
+### Architecture & Design
+- [Technical Architecture](#technical-architecture)
+- [Design Philosophy](#design-philosophy)
+- [Design Variants](#design-variants)
+- [Project Structure](#project-structure)
 
+### Integration
+- [API Integration](#api-integration)
+- [Related Repositories](#related-repositories)
+- [Infrastructure](#infrastructure)
 
-### Key Features
+### Developer Guide
+- [Quick Start](#quick-start)
+- [Development Setup](#development-setup)
+- [Development Guidelines](#development-guidelines)
+- [Testing & Quality](#testing--quality)
+- [Deployment](#deployment)
+- [Performance & Optimization](#performance--optimization)
+- [Troubleshooting](#troubleshooting)
 
-- **Real-time Ride Tracking:** Live route monitoring, ETA updates, and safety signal handling
-- **Admin Dashboard:** Unified view of all rides, statuses, and live incidents with organizational-level reporting
-- **Scheduling & Dispatch:** Bulk trip creation, recurring schedules, and drag-and-drop reassignments
-- **Driver Management:** Streamlined onboarding, role assignment, and permission controls
-- **Safety & Escalation:** Panic signal handling, rapid incident response, and escalation pathways
-- **Compliance & Reporting:** Comprehensive audit logs, exportable reports (CSV/PDF), and regulatory tracking
+### Reference
+- [Current Status](#current-status)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Tech Stack
+---
 
-- **Frontend Framework:** React + TypeScript
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS
-- **State Management:** Redux Toolkit (intended)
-- **Server State:** React Query / SWR (intended)
-- **Testing:** Jest, React Testing Library, Playwright/Cypress
-- **Accessibility:** WCAG 2.1 AA compliance via Axe-core
+# Business & Product
 
-## Project Structure
+## Product Overview
+
+ChaufHER Web is the operational command center for the ChaufHER platform, providing real-time oversight, incident management, and administrative controls for safe, reliable ride operations.
+
+### Core Value Proposition
+
+- **Real-Time Oversight**: Live ride tracking, status monitoring, and instant incident alerts
+- **Safety Management**: Rapid panic response, escalation workflows, and incident resolution
+- **Operational Control**: Driver management, scheduling, dispatch, and route optimization
+- **Compliance Ready**: Comprehensive audit logs, exportable reports, and regulatory tracking
+- **Role-Based Access**: Tailored views for guardians, operators, administrators, and drivers
+
+### Key Capabilities
+
+| Feature | Capability | User Benefit |
+|---------|-----------|--------------|
+| **Live Tracking** | Real-time route monitoring, ETA updates | Immediate visibility into all active rides |
+| **Admin Dashboard** | Unified view of rides, incidents, metrics | Single pane of glass for operations |
+| **Scheduling** | Bulk trip creation, recurring schedules | Efficient resource planning |
+| **Driver Management** | Onboarding, verification, permissions | Streamlined workforce administration |
+| **Safety Response** | Panic signal handling, escalation paths | Rapid incident resolution |
+| **Reporting** | Audit logs, CSV/PDF exports | Compliance and analytics |
+
+---
+
+## Purpose & Value
+
+### Business Problems Solved
+
+1. **Operational Visibility**: Real-time oversight of all rides eliminates blind spots
+2. **Incident Response**: Rapid escalation and resolution of safety events
+3. **Resource Optimization**: Efficient scheduling and dispatch reduce idle time
+4. **Compliance Burden**: Automated audit trails and reporting simplify regulatory requirements
+5. **Trust Building**: Transparent operations increase stakeholder confidence
+
+### Technical Challenges Addressed
+
+1. **Real-Time Coordination**: WebSocket-based updates ensure instant synchronization
+2. **Role-Based Access**: Granular permissions prevent unauthorized access
+3. **Data Integrity**: Comprehensive audit logging tracks all actions
+4. **Scalability**: Modular architecture supports growing user base
+5. **Accessibility**: WCAG 2.1 AA compliance ensures universal usability
+
+### Example Scenarios
+
+**Scenario 1: Guardian Monitoring**
+- Parent arranges ride for child via mobile app
+- Opens web portal to track ride in real-time
+- Receives instant notification when child arrives safely
+- Reviews trip history and driver ratings
+
+**Scenario 2: Incident Escalation**
+- Driver triggers panic button during ride
+- Operations dashboard immediately alerts on-duty staff
+- Operator views live location, contacts driver
+- Escalates to emergency services if needed
+- Incident logged with full timeline for review
+
+**Scenario 3: Corporate Fleet Management**
+- Admin schedules recurring rides for employee shift changes
+- Bulk-assigns drivers based on availability and location
+- Monitors on-time performance metrics
+- Exports monthly compliance reports for audit
+
+---
+
+## Target Audience
+
+### Primary Users
+
+#### Operations Staff
+- **Role**: Monitor active rides, respond to incidents, coordinate drivers
+- **Needs**: Real-time dashboards, escalation tools, communication channels
+- **Pain Points**: Delayed incident notifications, fragmented information
+
+#### Administrators
+- **Role**: Manage drivers, configure schedules, generate reports
+- **Needs**: User management, bulk operations, compliance reporting
+- **Pain Points**: Manual data entry, lack of audit trails
+
+#### Guardians
+- **Role**: Arrange and monitor rides for dependents
+- **Needs**: Live tracking, safety notifications, trip history
+- **Pain Points**: Lack of visibility, delayed updates
+
+#### Drivers
+- **Role**: View schedules, accept requests, update status
+- **Needs**: Clear assignments, route guidance, earnings tracking
+- **Pain Points**: Confusing interfaces, poor communication
+
+### Secondary Users
+
+#### Compliance Officers
+- **Role**: Audit operations, generate regulatory reports
+- **Needs**: Comprehensive logs, exportable data, incident summaries
+- **Tools**: Reporting module, audit trail viewer
+
+#### Support Staff
+- **Role**: Assist users, resolve issues, escalate problems
+- **Needs**: User lookup, incident history, communication tools
+- **Tools**: Support dashboard, chat integration
+
+---
+
+## Expected Outcomes
+
+### Business Impact
+
+**Short-Term (0-6 months):**
+- Reduced incident response times (target: <5 minutes)
+- Improved on-time performance (target: >95%)
+- Increased operational efficiency
+- Higher stakeholder satisfaction
+
+**Long-Term (6-24 months):**
+- Full compliance and audit readiness
+- Recurring business from schools/corporates
+- Data-driven service improvements
+- Scalable operations supporting growth
+
+### Key Performance Indicators
+
+| Metric | Target | Measurement | Owner |
+|--------|--------|-------------|-------|
+| **Incident Response Time** | <5 min | Dashboard analytics | Operations Lead |
+| **On-Time Pickups** | >95% | Trip completion data | Fleet Manager |
+| **Ride Disruptions** | <2% | Incident reports | Operations Lead |
+| **User Satisfaction (NPS)** | >70 | In-app surveys | Product Manager |
+| **Compliance Coverage** | 100% | Audit log completeness | Compliance Officer |
+| **Dashboard Uptime** | >99.5% | Azure Monitor | DevOps Lead |
+
+---
+
+## Multi-Repo Architecture
+
+ChaufHER Web is part of a coordinated multi-repository ecosystem:
 
 ```
-src/
-├── components/           # Shared UI components
-│   ├── BookingCard.tsx
-│   ├── BottomNav.tsx
-│   ├── DriverSpotlight.tsx
-│   ├── Hero.tsx
-│   └── TrustBadges.tsx
-├── variants/             # Design variants (themed implementations)
-│   ├── BoldProfessional/    # Authority & confidence-driven
-│   ├── MinimalClarity/      # Streamlined, focused (DEFAULT)
-│   ├── VibrantEnergy/       # Modern, engaging
-│   └── WarmCommunity/       # Approachable, human-centered
-├── App.tsx              # Main application component
-├── index.tsx            # Entry point
-└── index.css            # Global styles
+                    chaufher-workspace (entry point, shared docs)
+                            |
+        ┌───────────────────┼───────────────────┐
+        |                   |                   |
+   chaufher-app       chaufher-web         chaufher-api
+ (Flutter mobile)     (React admin)       (.NET backend)
+        |                   |                   |
+        └───────────────────┼───────────────────┘
+                            |
+                     chaufher-infra
+                  (Azure IaC, CI/CD)
 ```
 
-## Design Variants
+### Repository Responsibilities
 
-ChaufHER Web supports multiple design variants for different organizational contexts. Each variant shares core component logic but applies distinct visual theming.
+| Repository | Purpose | Technology | Integration Points |
+|------------|---------|------------|-------------------|
+| **chaufher-workspace** | Monorepo coordination, shared docs | Markdown, scripts | All repos |
+| **chaufher-web** (this repo) | Operational portal | React/TypeScript | chaufher-api, chaufher-infra |
+| **chaufher-app** | Mobile client for riders/drivers | Flutter/Dart | chaufher-api |
+| **chaufher-api** | Backend services, business logic | .NET 9, PostgreSQL | chaufher-infra |
+| **chaufher-infra** | Infrastructure as code, CI/CD | Bicep/Terraform | All repos |
 
-### Switching Variants
+---
 
-Edit [src/index.tsx](src/index.tsx) to change the active variant:
+# Architecture & Design
 
-```tsx
-// Import desired variant
-import Variant from './variants/MinimalClarity';  // or BoldProfessional, VibrantEnergy, WarmCommunity
+## Technical Architecture
 
-// Render variant
-ReactDOM.render(<Variant />, document.getElementById('root'));
-```
+### Tech Stack
 
-### Variant Descriptions
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | React 18 + TypeScript | UI framework |
+| **Build Tool** | Vite | Fast dev server, optimized builds |
+| **Styling** | Tailwind CSS | Utility-first styling |
+| **State Management** | Redux Toolkit (planned) | Global state |
+| **Server State** | React Query / SWR (planned) | API data caching |
+| **Testing** | Jest, React Testing Library | Unit/integration tests |
+| **E2E Testing** | Playwright/Cypress | End-to-end flows |
+| **Accessibility** | Axe-core | WCAG 2.1 AA compliance |
 
-| Variant | Use Case | Key Characteristics |
-|---------|----------|---------------------|
-| **MinimalClarity** | Default; corporate/school operations | Clean typography, focus on data, low visual noise |
-| **BoldProfessional** | Enterprise/premium positioning | Strong contrast, authority-focused, structured layout |
-| **VibrantEnergy** | Youth-focused or modern brands | Bright colors, rounded elements, dynamic layout |
-| **WarmCommunity** | Community-focused services | Warm palette, human imagery, approachable tone |
-
-### Component Sharing
-
-- **Base Components** (`src/components/`): Pure logic, minimal styling (Tailwind classes only)
-- **Variant Components** (`src/variants/*/`): Override with variant-specific styling, colors, and layouts
-- **Shared Patterns**: All variants implement identical data flows and interaction patterns for consistency
-
-### Adding a New Variant
-
-1. Create `src/variants/YourVariant/` directory
-2. Copy component files from `src/variants/MinimalClarity/`
-3. Customize Tailwind classes for your design system
-4. Test all flows match base component logic
-5. Update variant list above when ready for production
-
-## Design Guardrails
-
-The following guardrails are non-negotiable across all UI and feature decisions:
-
-1. **Non-Negotiable Safety Prominence:** Safety-critical information (alerts, ride status, escalation options) must always be visually prioritized
-2. **Status At-a-Glance:** Every ride status and user action must be clear, unambiguous, and available within two clicks
-3. **Timeliness:** All data (rides, alerts, locations) must update in real time or user must be clearly notified of stale/failed states
-4. **Escalation Pathways:** "What do I do next?" must be obvious for any unexpected, delayed, or 'at risk' scenario
-5. **Role-Appropriate Views:** Only information relevant to the user's current responsibility is shown—minimal distractions
-6. **Auditability:** All ride, user, and incident activity must generate reliable, exportable logs
-7. **Consistent Everywhere:** Core visuals and flows remain consistent across browser, tablet, and app
-8. **Accessibility:** All UIs must meet or exceed WCAG 2.1 AA
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16+ and npm/pnpm
-- Git
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/phoenixvc/chaufher-web.git
-cd chaufher-web
-
-# Install dependencies
-npm install
-# or
-pnpm install
-```
-
-### Environment Configuration
-
-Create a `.env.local` file in the root directory:
-
-```bash
-# API Configuration
-VITE_API_BASE_URL=http://localhost:3000/api  # Dev: local, Staging/Prod: Azure endpoint
-VITE_API_TIMEOUT=30000
-
-# Azure Configuration
-VITE_AZURE_TENANT_ID=your-tenant-id
-VITE_AZURE_CLIENT_ID=your-client-id
-VITE_AZURE_REDIRECT_URI=http://localhost:5173/auth/callback
-
-# Feature Flags
-VITE_FEATURE_LIVE_TRACKING=true
-VITE_FEATURE_PANIC_BUTTON=true
-VITE_FEATURE_REPORTING=false  # Staged rollout
-
-# Application Insights (Monitoring)
-VITE_APP_INSIGHTS_KEY=your-instrumentation-key
-
-# Environment
-VITE_ENV=development  # development, staging, production
-```
-
-**Environment-Specific Configs:**
-
-- **Development** (`.env.local`): Local API, feature flags enabled, verbose logging
-- **Staging** (`.env.staging`): Azure staging endpoints, test credentials, canary feature flags
-- **Production** (`.env.production`): Azure production endpoints, hardened secrets, limited logging
-
-Load environment files via:
-```bash
-npm run dev -- --mode staging  # Uses .env.staging
-```
-
-### Development
-
-```bash
-# Start development server
-npm run dev
-
-# The app will be available at http://localhost:5173
-```
-
-### Build for Production
-
-```bash
-npm run build
-
-# Preview production build locally
-npm run preview
-```
-
-## Testing
-
-### Unit & Component Tests
-
-```bash
-# Run tests with Jest and React Testing Library
-npm run test
-
-# Watch mode for development
-npm run test:watch
-
-# Coverage report
-npm run test:coverage
-```
-
-### End-to-End Tests
-
-```bash
-# Run E2E tests with Playwright/Cypress
-npm run test:e2e
-```
-
-### Accessibility Checks
-
-```bash
-# Run Axe-core accessibility audits
-npm run test:a11y
-```
-
-## Current Status
-
-**This is a UI/UX design exploration and demo.** The current codebase focuses on visual design variants and foundational component patterns. Backend integration and full feature implementation are planned.
-
-### Implementation Roadmap
-
-| Component/Flow | Status | Notes |
-|---|---|---|
-| **Design Variants** | ✅ Complete | All 4 variants fully designed and interactive |
-| **Hero/Landing** | ✅ Complete | Responsive hero section across variants |
-| **Booking Card** | ✅ Complete | Interactive booking UI pattern |
-| **Driver Spotlight** | ✅ Complete | Driver profile display |
-| **Trust Badges** | ✅ Complete | Safety/trust visual indicators |
-| **Bottom Navigation** | ✅ Complete | Mobile-optimized navigation |
-| **Live Ride Tracker** | 🏗️ Planned | Real-time route, ETA, safety signals |
-| **Admin Dashboard** | 🏗️ Planned | Unified rides/incidents/reporting view |
-| **Scheduling UI** | 🏗️ Planned | Bulk trip creation, drag-drop reassignment |
-| **User Management** | 🏗️ Planned | RBAC, driver onboarding, permission matrix |
-| **Reporting/Export** | 🏗️ Planned | CSV/PDF export, compliance logs |
-| **API Integration** | ⏳ Blocked | Awaiting chaufher.api schema finalization |
-| **Authentication** | ⏳ Blocked | Awaiting Azure AD/OAuth2 configuration |
-
-### What's Working
-
-- Interactive UI components and layout patterns
-- Design variant switching (visual exploration)
-- Responsive design (mobile, tablet, desktop)
-- Tailwind CSS theming across all variants
-- Component-level accessibility patterns (ARIA labels, semantic HTML)
-
-### What's Mocked/Placeholder
-
-- API calls (hardcoded data)
-- User authentication and RBAC
-- Real-time location updates
-- Incident/panic escalation flows
-- Reporting and export functions
-
-## Related Repositories
-
-ChaufHER Web is part of a multi-repository workspace:
-
-- **[chaufher.workspace](https://github.com/phoenixvc/chaufher.workspace)** – Monorepo entry point, shared documentation, and coordination hub
-- **[chaufher.app](https://github.com/phoenixvc/chaufher.app)** – Flutter mobile application for drivers, riders, and guardians
-- **[chaufher.api](https://github.com/phoenixvc/chaufher.api)** – Backend REST/gRPC APIs, business logic, and event handling
-- **[chaufher.infra](https://github.com/phoenixvc/chaufher.infra)** – Azure IaC (Terraform/ARM), CI/CD pipelines, and deployment automation
-
-Refer to [chaufher.workspace](https://github.com/phoenixvc/chaufher.workspace) for overall project documentation and setup.
-
-## Architecture (Planned)
+### System Architecture
 
 ```
 ┌─────────────────────────────┐
@@ -269,7 +236,7 @@ Refer to [chaufher.workspace](https://github.com/phoenixvc/chaufher.workspace) f
     │ RBAC Logic  │
     └──────┬──────┘
            │
-     [REST/gRPC API]
+     [REST/SignalR API]
            │
     ┌──────▼──────────────────┐
     │  ChaufHER Backend API   │
@@ -277,401 +244,341 @@ Refer to [chaufher.workspace](https://github.com/phoenixvc/chaufher.workspace) f
     └──────┬──────────────────┘
            │
   ┌────────┴─────────────┐
-  │ Ext. Services        │
+  │ External Services    │
   │ Maps, Notifications  │
   │ Location, Support    │
   └──────────────────────┘
 ```
 
-**Client Responsibilities:**
-- UI rendering and state management
-- User interaction validation
-- RBAC gating and role-based views
-- Optimistic UI updates
+### Responsibilities
 
-**Server Responsibilities:**
+**Client (Web Portal):**
+- UI rendering and user interaction
+- Client-side validation and optimistic updates
+- Role-based view filtering
+- Real-time data synchronization (SignalR)
+
+**Server (chaufher-api):**
 - Source of truth for business logic
-- Strong data validation
-- Incident and escalation logic
+- Data persistence and consistency
+- Incident escalation and routing
 - Audit event emission
+
+---
+
+## Design Philosophy
+
+### Design Guardrails
+
+Non-negotiable principles across all features:
+
+1. **Safety Prominence**: Safety-critical information always visually prioritized
+2. **Status At-a-Glance**: Every ride status clear within two clicks
+3. **Real-Time Updates**: All data updates live or user notified of stale state
+4. **Clear Escalation**: "What do I do next?" obvious for any unexpected scenario
+5. **Role-Appropriate Views**: Only relevant information shown per user role
+6. **Auditability**: All activity generates reliable, exportable logs
+7. **Consistency**: Core visuals and flows identical across devices
+8. **Accessibility**: WCAG 2.1 AA compliance mandatory
+
+### Core Principles
+
+#### 1. Clarity Over Complexity
+- Minimal visual noise, focus on critical data
+- Clear information hierarchy
+- Obvious call-to-action buttons
+
+#### 2. Speed of Response
+- Real-time updates via WebSocket
+- Optimistic UI for instant feedback
+- Minimal latency for critical actions
+
+#### 3. Role-Based Design
+- Tailored dashboards per user type
+- Granular permission controls
+- Context-aware navigation
+
+#### 4. Audit-First
+- Every action logged with timestamp
+- Exportable reports for compliance
+- Immutable audit trail
+
+---
+
+## Design Variants
+
+ChaufHER Web supports multiple design variants for different organizational contexts. Each variant shares core logic but applies distinct visual theming.
+
+### Available Variants
+
+| Variant | Use Case | Characteristics |
+|---------|----------|-----------------|
+| **MinimalClarity** (Default) | Corporate/school operations | Clean typography, low visual noise |
+| **BoldProfessional** | Enterprise/premium positioning | Strong contrast, authority-focused |
+| **VibrantEnergy** | Youth-focused or modern brands | Bright colors, dynamic layout |
+| **WarmCommunity** | Community-focused services | Warm palette, approachable tone |
+
+### Switching Variants
+
+Edit `src/index.tsx` to change active variant:
+
+```tsx
+// Import desired variant
+import Variant from './variants/MinimalClarity';
+
+// Render variant
+ReactDOM.render(<Variant />, document.getElementById('root'));
+```
+
+### Component Sharing
+
+- **Base Components** (`src/components/`): Pure logic, minimal styling
+- **Variant Components** (`src/variants/*/`): Override with variant-specific styling
+- **Shared Patterns**: Identical data flows and interactions across variants
+
+### Adding New Variants
+
+1. Create `src/variants/YourVariant/` directory
+2. Copy component files from `src/variants/MinimalClarity/`
+3. Customize Tailwind classes for your design system
+4. Test all flows match base component logic
+5. Update variant list when production-ready
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/           # Shared UI components
+│   ├── BookingCard.tsx
+│   ├── BottomNav.tsx
+│   ├── DriverSpotlight.tsx
+│   ├── Hero.tsx
+│   └── TrustBadges.tsx
+├── variants/             # Design variants
+│   ├── BoldProfessional/
+│   ├── MinimalClarity/   # DEFAULT
+│   ├── VibrantEnergy/
+│   └── WarmCommunity/
+├── hooks/                # Custom React hooks
+├── utils/                # Helper functions
+├── types/                # TypeScript interfaces
+├── App.tsx               # Main application
+├── index.tsx             # Entry point
+└── index.css             # Global styles
+```
+
+---
+
+# Integration
 
 ## API Integration
 
 ### Backend Setup
 
-ChaufHER Web connects to [chaufher.api](https://github.com/phoenixvc/chaufher.api). See that repository for:
-
+ChaufHER Web connects to [chaufher-api](https://github.com/phoenixvc/chaufher-api). See that repository for:
 - Full API schema and endpoints
-- Authentication setup (OAuth2/OpenID Connect)
-- Docker/local development environment
+- Authentication setup (OAuth2/Azure AD)
+- Local development environment
 
 ### API Configuration
 
-1. **Set API Base URL** in `.env.local`:
-   ```bash
-   VITE_API_BASE_URL=http://localhost:3000/api  # Dev
-   # or
-   VITE_API_BASE_URL=https://api-staging.chaufher.azure.com/api  # Staging
-   ```
+Set API base URL in `.env.local`:
 
-2. **Authentication Header** (configured automatically):
-   ```
-   Authorization: Bearer {access_token}
-   X-Tenant-ID: {tenant_id}
-   ```
+```bash
+# Development
+VITE_API_BASE_URL=http://localhost:3000/api
 
-### Example API Calls
+# Staging
+VITE_API_BASE_URL=https://api-staging.chaufher.azure.com/api
 
-```typescript
-// Fetch active rides (admin dashboard)
-const response = await fetch(`${VITE_API_BASE_URL}/rides?status=active`, {
-  headers: { 'Authorization': `Bearer ${token}` }
-});
+# Production
+VITE_API_BASE_URL=https://api.chaufher.azure.com/api
+```
 
-// Escalate incident
-await fetch(`${VITE_API_BASE_URL}/incidents/{id}/escalate`, {
-  method: 'POST',
-  headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-  body: JSON.stringify({ severity: 'critical', reason: 'panic_button' })
-});
+### Authentication
+
+Configured automatically via Azure AD:
+
+```
+Authorization: Bearer {access_token}
+X-Tenant-ID: {tenant_id}
 ```
 
 ### API Documentation
 
 OpenAPI/Swagger specs available at:
-- **Dev:** `http://localhost:3000/api/docs`
-- **Staging:** `https://api-staging.chaufher.azure.com/api/docs`
-- **Production:** `https://api.chaufher.azure.com/api/docs`
+- **Dev**: `http://localhost:3000/api/docs`
+- **Staging**: `https://api-staging.chaufher.azure.com/api/docs`
+- **Production**: `https://api.chaufher.azure.com/api/docs`
 
-## Deployment
+---
 
-### Hosting
+## Related Repositories
 
-ChaufHER Web is deployed on **Microsoft Azure** for optimized React/Vite performance and enterprise-grade infrastructure.
+| Repository | Purpose | Link |
+|------------|---------|------|
+| **chaufher-workspace** | Monorepo entry point, shared docs | [GitHub](https://github.com/phoenixvc/chaufher-workspace) |
+| **chaufher-api** | Backend REST APIs, SignalR hubs | [GitHub](https://github.com/phoenixvc/chaufher-api) |
+| **chaufher-app** | Flutter mobile client | [GitHub](https://github.com/phoenixvc/chaufher-app) |
+| **chaufher-infra** | Azure IaC, CI/CD pipelines | [GitHub](https://github.com/phoenixvc/chaufher-infra) |
 
-#### Azure Resources
+---
 
-- **App Service (Web):** Hosts the React/Vite SPA
-- **Azure Storage (Static Site):** CDN-backed static hosting for optimal global performance
-- **Application Insights:** Real-time monitoring, error tracking, and performance metrics
-- **Log Analytics Workspace:** Centralized logging for compliance and debugging
-- **Azure Key Vault:** Secure storage of secrets (API keys, connection strings, OAuth credentials)
-- **Deployment Slots:** Staging and production slots for blue-green deployments
+## Infrastructure
 
-#### Setup & Configuration
+This project uses centralized infrastructure managed in **[chaufher-infra](https://github.com/phoenixvc/chaufher-infra)**.
 
-See [chaufher.infra](https://github.com/phoenixvc/chaufher.infra) for:
-- Terraform/ARM templates for Azure resource provisioning
-- Connection strings and managed identities
-- Deployment slot configuration
-- Automated certificate management
+For frontend integration guidance, environment variables, and deployment checklists, see:
+**[chaufher-infra/MOBILE_CHECKLIST.md](https://github.com/phoenixvc/chaufher-infra/blob/main/MOBILE_CHECKLIST.md)**
 
-#### Connecting to Azure Resources
+---
 
-```bash
-# Login to Azure
-az login
+# Developer Guide
 
-# Retrieve secrets from Key Vault
-az keyvault secret show --name "api-url" --vault-name "chaufher-kv"
+## Quick Start
 
-# Deploy to App Service
-az webapp deployment source config-zip --resource-group chaufher-rg --name chaufher-web --src build.zip
-```
+### Prerequisites
 
-#### Monitoring
+| Tool | Version | Purpose |
+|------|---------|---------|
+| **Node.js** | 16+ | JavaScript runtime |
+| **npm/pnpm** | Latest | Package manager |
+| **Git** | Latest | Version control |
 
-- **Application Insights:** Configured via `VITE_APP_INSIGHTS_KEY` in `.env.production`
-- **Log Analytics:** Stream frontend errors, page views, custom events
-- **Alerts:** Auto-triggered for error spikes (>5% failure rate) or performance degradation (>3s load time)
+### Installation
 
-### CI/CD Pipeline
+### Environment Configuration
 
-- **VCS:** GitHub
-- **CI/CD:** GitHub Actions + Azure DevOps (configured in [chaufher.infra](https://github.com/phoenixvc/chaufher.infra))
+Create `.env.local` file in root directory with required configuration values.
 
-#### Pull Request Workflow
+### Development
 
-```
-PR Created
-  ↓
-  ├─ ESLint & Prettier checks
-  ├─ TypeScript strict mode compilation
-  ├─ Jest unit tests
-  ├─ Axe accessibility audit
-  └─ Build artifact verification
-     ↓
-     ✅ All checks pass → Preview deployment to Azure staging
-     ❌ Any check fails → Block merge until resolved
-```
+### Build for Production
 
-#### Main Branch Workflow
+---
 
-```
-Merge to main
-  ↓
-  ├─ Run full test suite
-  ├─ Build production artifact
-  ├─ Deploy to Azure staging slot
-  ├─ Smoke tests & health checks
-  └─ Manual approval gate (ops/product)
-     ↓
-     ✅ Approved → Swap to production slot
-     ❌ Issues found → Rollback to previous version
-```
+## Development Setup
 
-#### Deployment Environments
+### Environment Variables
 
-| Environment | URL | Slot | Secrets | Data |
-|---|---|---|---|---|
-| **Staging** | https://chaufher-web-staging.azurewebsites.net | staging | Test credentials | Masked/synthetic |
-| **Production** | https://chaufher.azurewebsites.net | production | Prod secrets (Key Vault) | Real data |
-
-#### Triggering Deployments
+**Required:**
 
 ```bash
-# Automatic on main branch merge
-# Manual rollback (ops only):
-az webapp deployment slot swap --resource-group chaufher-rg --name chaufher-web --slot staging
+# API Configuration
+VITE_API_BASE_URL=http://localhost:3000/api
+VITE_API_TIMEOUT=30000
+
+# Azure Configuration
+VITE_AZURE_TENANT_ID=your-tenant-id
+VITE_AZURE_CLIENT_ID=your-client-id
+VITE_AZURE_REDIRECT_URI=http://localhost:5173/auth/callback
+
+# Feature Flags
+VITE_FEATURE_LIVE_TRACKING=true
+VITE_FEATURE_PANIC_BUTTON=true
+VITE_FEATURE_REPORTING=false
+
+# Monitoring
+VITE_APP_INSIGHTS_KEY=your-instrumentation-key
+
+# Environment
+VITE_ENV=development
 ```
 
-### Versioning & Rollback
+**Environment-Specific Configs:**
+- **Development** (`.env.local`): Local API, feature flags enabled
+- **Staging** (`.env.staging`): Azure staging endpoints, test credentials
+- **Production** (`.env.production`): Azure production endpoints, hardened secrets
 
-- Semantic versioning for releases
-- Feature flags for staged rollouts
-- One-click rollback to previous versions
-- Approval workflow for production deployments
+Load environment files:
+```bash
+npm run dev -- --mode staging  # Uses .env.staging
+```
 
-## Key Success Metrics (KPIs)
-
-- Reduction in incident response times
-- Increase in on-time pickups and drop-offs
-- Lower ride disruptions or missed assignments
-- High user/operator satisfaction (NPS)
-- Full compliance and audit reporting coverage
-- Increase in recurring business from schools/corporates
-
-## Contributing
-
-1. Create a feature branch: `git checkout -b feature/your-feature`
-2. Commit with clear, descriptive messages (see Development Guidelines)
-3. Open a pull request with a detailed description
-4. Ensure all tests pass and accessibility checks are green
-5. Await code review approval before merge
-6. Delete branch after merge
+---
 
 ## Development Guidelines
 
+### Naming Conventions
+
+| Element | Convention | Example |
+|---------|-----------|---------|
+| **Component Files** | PascalCase | `BookingCard.tsx`, `DriverSpotlight.tsx` |
+| **Utility Files** | camelCase | `useAuth.ts`, `apiClient.ts` |
+| **Constants** | UPPER_SNAKE_CASE | `MAX_RETRY_ATTEMPTS`, `API_TIMEOUT` |
+| **Props Interfaces** | `{Component}Props` | `BookingCardProps` |
+
 ### Component Structure
 
-**Naming Conventions:**
-- Component files: PascalCase (`BookingCard.tsx`, `DriverSpotlight.tsx`)
-- Utility files: camelCase (`useAuth.ts`, `apiClient.ts`)
-- Constants: UPPER_SNAKE_CASE (`MAX_RETRY_ATTEMPTS`, `API_TIMEOUT`)
-- Component props interfaces: `{ComponentName}Props` (e.g., `BookingCardProps`)
-
-**File Organization:**
 ```
 ComponentName/
-├── index.tsx           # Default export
-├── ComponentName.tsx   # Component implementation
-├── ComponentName.test.tsx  # Unit tests
-├── types.ts            # TypeScript interfaces/types
-└── constants.ts        # Local constants
+├── index.tsx                  # Default export
+├── ComponentName.tsx          # Implementation
+├── ComponentName.test.tsx     # Unit tests
+├── types.ts                   # TypeScript interfaces
+└── constants.ts               # Local constants
 ```
 
 ### State Management
 
-- **Local Component State:** React `useState` for UI-only state (form inputs, modals)
-- **Shared State:** Redux Toolkit (planned; see [chaufher.api](https://github.com/phoenixvc/chaufher.api) for store setup)
-- **Server State:** React Query / SWR for API data caching and synchronization
-- **Auth State:** Managed via Azure AD + context provider
-
-**Example Redux Slice (planned):**
-```typescript
-import { createSlice } from '@reduxjs/toolkit';
-
-const ridesSlice = createSlice({
-  name: 'rides',
-  initialState: { active: [], loading: false },
-  reducers: {
-    setRides: (state, action) => { state.active = action.payload; },
-  },
-});
-```
+- **Local State**: React `useState` for UI-only state
+- **Shared State**: Redux Toolkit (planned)
+- **Server State**: React Query / SWR for API data
+- **Auth State**: Azure AD + context provider
 
 ### Styling Guidelines
 
-- **Framework:** Tailwind CSS (configured in [tailwind.config.js](tailwind.config.js))
-- **Design Tokens:** Defined in Tailwind config; extend via theme
-- **Variant-Specific Overrides:** Place in `src/variants/{Variant}/index.css`
-- **Avoid:** Inline styles or CSS-in-JS; use Tailwind utilities or scoped SCSS
-
-**Example Tailwind Usage:**
-```tsx
-<div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg shadow-md">
-  <h2 className="text-lg font-bold text-gray-900">Ride Status</h2>
-  <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-    Escalate
-  </button>
-</div>
-```
+- **Framework**: Tailwind CSS
+- **Design Tokens**: Defined in `tailwind.config.js`
+- **Variant Overrides**: Place in `src/variants/{Variant}/index.css`
+- **Avoid**: Inline styles or CSS-in-JS
 
 ### Git Workflow
 
-**Branching Strategy:** Git Flow
-- `main` – Production-ready code
-- `develop` – Integration branch (optional for large teams)
-- `feature/your-feature` – Feature branches from `main`
-- `fix/issue-description` – Hotfix branches from `main`
+**Branching:**
+- `main` — Production-ready
+- `feature/your-feature` — Feature branches
+- `fix/issue-description` — Bugfix branches
 
 **Commit Conventions:**
+
 ```
 <type>(<scope>): <subject>
-
-<body>
-
-<footer>
 ```
 
-Types: `feat`, `fix`, `refactor`, `test`, `docs`, `style`, `chore`
+**Types:** `feat`, `fix`, `refactor`, `test`, `docs`, `style`, `chore`
 
-Examples:
-```
-feat(booking-card): add panic button with escalation flow
-fix(auth): resolve Azure AD token refresh issue
-docs(readme): update environment setup instructions
-```
+**Examples:**
+- `feat(booking-card): add panic button with escalation flow`
+- `fix(auth): resolve Azure AD token refresh issue`
+- `docs(readme): update environment setup instructions`
 
-## Troubleshooting
+---
 
-### Common Setup Issues
+## Testing & Quality
 
-**Port 5173 already in use**
-```bash
-# Find process using port
-lsof -i :5173
+### Test Strategy
 
-# Kill process or use different port
-npm run dev -- --port 5174
-```
-
-**npm install fails with permission errors**
-```bash
-# Clear npm cache
-npm cache clean --force
-
-# Reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
-
-**TypeScript compilation errors**
-```bash
-# Ensure strict mode is enabled
-# Check tsconfig.json: "strict": true
-
-# Run type check
-npx tsc --noEmit
-```
-
-**ESLint/Prettier conflicts**
-```bash
-# Format code
-npm run format
-
-# Lint and fix
-npm run lint -- --fix
-```
-
-**Build fails in CI but works locally**
-```bash
-# Clean and rebuild
-rm -rf dist node_modules package-lock.json
-npm install
-npm run build
-
-# Check environment variables are set
-echo $VITE_API_BASE_URL
-echo $VITE_AZURE_TENANT_ID
-```
-
-**API calls fail with 401 Unauthorized**
-- Ensure `.env.local` has correct `VITE_AZURE_TENANT_ID` and `VITE_AZURE_CLIENT_ID`
-- Check backend is running and accessible
-- Verify access token is valid (not expired)
-- Review browser Network tab for request details
-
-**Variant doesn't display correctly**
-- Clear browser cache: Cmd+Shift+R (Chrome) or Cmd+Option+R (Safari)
-- Check `src/index.tsx` imports correct variant
-- Verify Tailwind CSS build includes variant styles
-
-### Getting Help
-
-- Check [chaufher.workspace](https://github.com/phoenixvc/chaufher.workspace) for project-wide docs
-- Review [chaufher.api](https://github.com/phoenixvc/chaufher.api) for backend troubleshooting
-- Open an issue with:
-  - Node version (`node -v`)
-  - npm version (`npm -v`)
-  - Error logs and stack trace
-  - Steps to reproduce
-
-## Testing Requirements
-
-### Prerequisites
-
-- **Jest:** Installed via npm (configured in [package.json](package.json))
-- **React Testing Library:** For component behavior testing
-- **Mock Data:** Test fixtures for API responses (see `src/__tests__/mocks/`)
-- **API Mocks:** Mock Service Worker (MSW) for intercepting HTTP requests
-
-### Setup
-
-1. **Install testing dependencies:**
-   ```bash
-   npm install --save-dev jest @testing-library/react @testing-library/jest-dom msw
-   ```
-
-2. **Configure Jest** (`jest.config.js`):
-   ```js
-   module.exports = {
-     preset: 'ts-jest',
-     testEnvironment: 'jsdom',
-     setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
-   };
-   ```
-
-3. **Mock API calls** in tests using MSW:
-   ```typescript
-   import { rest } from 'msw';
-   import { server } from './mocks/server';
-
-   beforeAll(() => server.listen());
-   afterEach(() => server.resetHandlers());
-   afterAll(() => server.close());
-   ```
+| Test Type | Framework | Purpose | Coverage Target |
+|-----------|-----------|---------|-----------------|
+| **Unit** | Jest | Component logic | 80%+ |
+| **Integration** | React Testing Library | Component behavior | 70%+ |
+| **E2E** | Playwright/Cypress | User flows | Key paths |
+| **Accessibility** | Axe-core | WCAG compliance | 100% |
 
 ### Running Tests
 
-```bash
-# Run all tests
-npm run test
+**Unit & Component Tests:**
 
-# Watch mode (re-run on file changes)
-npm run test:watch
+**End-to-End Tests:**
 
-# Coverage report
-npm run test:coverage
-
-# Specific test file
-npm run test -- BookingCard.test.tsx
-```
+**Accessibility Checks:**
 
 ### Test Structure
 
 ```typescript
-// src/components/BookingCard.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BookingCard } from './BookingCard';
 
@@ -690,103 +597,213 @@ describe('BookingCard', () => {
 });
 ```
 
+---
+
+## Deployment
+
+### Hosting
+
+Deployed on **Microsoft Azure** for enterprise-grade performance and reliability.
+
+#### Azure Resources
+
+- **App Service (Web)**: Hosts React/Vite SPA
+- **Azure Storage**: CDN-backed static hosting
+- **Application Insights**: Real-time monitoring, error tracking
+- **Log Analytics**: Centralized logging
+- **Key Vault**: Secure secrets storage
+- **Deployment Slots**: Staging and production slots
+
+#### Setup & Configuration
+
+See [chaufher-infra](https://github.com/phoenixvc/chaufher-infra) for:
+- Terraform/ARM templates
+- Connection strings and managed identities
+- Deployment slot configuration
+- Certificate management
+
+### CI/CD Pipeline
+
+**Pull Request Workflow:**
+
+```
+PR Created
+  ↓
+  ├─ ESLint & Prettier checks
+  ├─ TypeScript compilation
+  ├─ Jest unit tests
+  ├─ Axe accessibility audit
+  └─ Build verification
+     ↓
+     ✅ Pass → Preview deployment to staging
+     ❌ Fail → Block merge
+```
+
+**Main Branch Workflow:**
+
+```
+Merge to main
+  ↓
+  ├─ Full test suite
+  ├─ Build production artifact
+  ├─ Deploy to staging slot
+  ├─ Smoke tests & health checks
+  └─ Manual approval gate
+     ↓
+     ✅ Approved → Swap to production
+     ❌ Issues → Rollback
+```
+
+### Deployment Environments
+
+| Environment | URL | Slot | Data |
+|-------------|-----|------|------|
+| **Staging** | https://chaufher-web-staging.azurewebsites.net | staging | Synthetic |
+| **Production** | https://chaufher.azurewebsites.net | production | Real |
+
+---
+
 ## Performance & Optimization
 
 ### Build Optimization
 
-```bash
-# Analyze bundle size
-npm run build -- --analyze
-
-# Generate bundle report
-npx vite-plugin-visualizer
-```
-
 ### Lighthouse Targets
 
-- **Performance:** ≥85 (Core Web Vitals optimized)
-- **Accessibility:** 95+ (WCAG 2.1 AA compliant)
-- **Best Practices:** ≥90
-- **SEO:** ≥90
-
-**Run Lighthouse:**
-```bash
-# Local (Chrome DevTools)
-# Open DevTools → Lighthouse → Generate report
-
-# CLI (automated in CI)
-npm install -g @lhci/cli@latest
-lighthouse-ci autorun
-```
+- **Performance**: ≥85
+- **Accessibility**: 95+
+- **Best Practices**: ≥90
+- **SEO**: ≥90
 
 ### Key Optimization Tips
 
-1. **Code Splitting:** Lazy-load variants and heavy components
-   ```typescript
-   const MinimalClarity = React.lazy(() => import('./variants/MinimalClarity'));
-   ```
-
-2. **Image Optimization:** Use WebP with fallbacks
-   ```tsx
-   <picture>
-     <source srcSet="image.webp" type="image/webp" />
-     <img src="image.png" alt="" />
-   </picture>
-   ```
-
-3. **Tree-Shaking:** Ensure Tailwind purges unused styles
-   ```js
-   // tailwind.config.js
-   content: ['./src/**/*.{js,jsx,ts,tsx}']
-   ```
-
-4. **React Optimization:**
-   - Use `React.memo()` for expensive components
-   - Implement `useMemo()` and `useCallback()` for derived state
-   - Avoid inline function definitions in render
-
-5. **Network Performance:**
-   - Enable gzip compression (Azure App Service default)
-   - Implement request debouncing/throttling
-   - Cache API responses with React Query
+1. **Code Splitting**: Lazy-load variants and heavy components
+2. **Image Optimization**: Use WebP with fallbacks
+3. **Tree-Shaking**: Ensure Tailwind purges unused styles
+4. **React Optimization**: Use `React.memo()`, `useMemo()`, `useCallback()`
+5. **Network Performance**: Enable gzip, implement debouncing, cache API responses
 
 ### Performance Monitoring
 
 Application Insights tracks:
-- Page load time (Core Web Vitals: LCP, FID, CLS)
-- Error rates and error details
-- User session duration and bounce rate
-- Custom events (e.g., "Escalation Triggered", "Report Exported")
-
-**View Metrics:**
-```bash
-# Azure Portal → Application Insights → Performance
-# Dashboard → Custom metrics
-```
-
-## Code Quality Standards
-
-- **Linting:** ESLint + Prettier
-- **Type Safety:** Strict TypeScript configuration
-- **Testing:** Minimum 80% coverage for critical paths
-- **Accessibility:** Axe-core audits on every PR
-- **Performance:** Lighthouse scores maintained above 85
-
-## Support & Documentation
-
-- **In-App Help:** Accessible via chat or help panel (Intercom/Zendesk integration planned)
-- **Escalation:** Always-visible escalation controls for safety-critical scenarios
-- **API Docs:** OpenAPI/Swagger specification for backend integration
-- **Design Tokens:** Shared Tailwind configuration for consistent theming across variants
-
-## License
-
-[Add License Here]
-
-## Contact
-
-For questions or issues, please reach out to the ChaufHER team.
+- Page load time (Core Web Vitals)
+- Error rates and details
+- User session duration
+- Custom events (escalations, exports)
 
 ---
 
-**ChaufHER Web** delivers a robust, safety-first operational toolset, fulfilling stringent stakeholder requirements with modern engineering rigor and always referencing immutable design guardrails.
+## Troubleshooting
+
+### Common Issues
+
+**Port 5173 already in use:**
+- Find and kill process or use different port
+
+**npm install fails:**
+- Clear cache and reinstall
+
+**TypeScript compilation errors:**
+- Ensure strict mode enabled
+- Run type check
+
+**ESLint/Prettier conflicts:**
+- Format and lint code
+
+**Build fails in CI:**
+- Clean and rebuild
+- Check environment variables
+
+**API calls fail with 401:**
+- Verify Azure credentials
+- Check backend is running
+- Validate access token
+
+**Variant doesn't display:**
+- Clear browser cache
+- Check `src/index.tsx` imports
+- Verify Tailwind build
+
+### Getting Help
+
+- Check [chaufher-workspace](https://github.com/phoenixvc/chaufher-workspace)
+- Review [chaufher-api](https://github.com/phoenixvc/chaufher-api)
+- Open issue with error details and steps to reproduce
+- Contact: hans@chaufher.app
+
+---
+
+# Reference
+
+## Current Status
+
+**This is a UI/UX design exploration and demo.** Backend integration and full feature implementation are planned.
+
+### Implementation Roadmap
+
+| Component/Flow | Status | Notes |
+|----------------|--------|-------|
+| **Design Variants** | ✅ Complete | All 4 variants interactive |
+| **Hero/Landing** | ✅ Complete | Responsive across variants |
+| **Booking Card** | ✅ Complete | Interactive booking UI |
+| **Driver Spotlight** | ✅ Complete | Driver profile display |
+| **Trust Badges** | ✅ Complete | Safety indicators |
+| **Bottom Navigation** | ✅ Complete | Mobile-optimized nav |
+| **Live Ride Tracker** | 🏗️ Planned | Real-time route, ETA |
+| **Admin Dashboard** | 🏗️ Planned | Unified rides/incidents |
+| **Scheduling UI** | 🏗️ Planned | Bulk trip creation |
+| **User Management** | 🏗️ Planned | RBAC, onboarding |
+| **Reporting/Export** | 🏗️ Planned | CSV/PDF export |
+| **API Integration** | ⏳ Blocked | Awaiting API finalization |
+| **Authentication** | ⏳ Blocked | Awaiting Azure AD config |
+
+### What's Working
+
+- Interactive UI components
+- Design variant switching
+- Responsive design
+- Tailwind CSS theming
+- Accessibility patterns
+
+### What's Mocked
+
+- API calls (hardcoded data)
+- User authentication
+- Real-time location updates
+- Incident escalation flows
+- Reporting functions
+
+---
+
+## Contributing
+
+### Before You Commit
+
+- [ ] Code follows naming conventions
+- [ ] All tests pass
+- [ ] Linting passes
+- [ ] Code formatted
+- [ ] No secrets in commit
+- [ ] Commit message follows convention
+- [ ] Branch up-to-date with `main`
+
+### Pull Request Process
+
+1. Create feature branch
+2. Commit with clear messages
+3. Open PR with detailed description
+4. Ensure all tests pass
+5. Await code review approval
+6. Squash and merge
+7. Delete branch after merge
+
+---
+
+## License
+
+Copyright (c) 2025 ChaufHER. All rights reserved.
+
+[Add License Here — e.g., MIT, Apache 2.0, or proprietary]
+
+---
+
+**ChaufHER Web** delivers a robust, safety-first operational toolset with modern engineering rigor and immutable design guardrails.
