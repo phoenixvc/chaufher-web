@@ -1,35 +1,35 @@
 import { useState } from 'react';
-import { WarmCommunity } from './variants/WarmCommunity';
-import { BoldProfessional } from './variants/BoldProfessional';
-import { MinimalClarity } from './variants/MinimalClarity';
-import { VibrantEnergy } from './variants/VibrantEnergy';
-type Variant = 'warm' | 'bold' | 'minimal' | 'vibrant';
+import { EmpowermentPink } from './variants/EmpowermentPink';
+import { LuxuryPro } from './variants/LuxuryPro';
+import { TrustBlue } from './variants/TrustBlue';
+import { ModernChic } from './variants/ModernChic';
+type Variant = 'empowerment' | 'luxury' | 'trust' | 'modern';
 export function App() {
-  const [activeVariant, setActiveVariant] = useState<Variant>('warm');
+  const [activeVariant, setActiveVariant] = useState<Variant>('empowerment');
   const renderVariant = () => {
     switch (activeVariant) {
-      case 'warm':
-        return <WarmCommunity />;
-      case 'bold':
-        return <BoldProfessional />;
-      case 'minimal':
-        return <MinimalClarity />;
-      case 'vibrant':
-        return <VibrantEnergy />;
+      case 'empowerment':
+        return <EmpowermentPink />;
+      case 'luxury':
+        return <LuxuryPro />;
+      case 'trust':
+        return <TrustBlue />;
+      case 'modern':
+        return <ModernChic />;
       default:
-        return <WarmCommunity />;
+        return <EmpowermentPink />;
     }
   };
   const getBgColor = () => {
     switch (activeVariant) {
-      case 'warm':
-        return 'bg-[#e8e4df]';
-      case 'bold':
-        return 'bg-[#0f1225]';
-      case 'minimal':
-        return 'bg-[#f5f5f5]';
-      case 'vibrant':
-        return 'bg-[#2d1b4e]';
+      case 'empowerment':
+        return 'bg-gradient-to-br from-[#fef5fb] to-[#f5eeff]';
+      case 'luxury':
+        return 'bg-[#0a0a0a]';
+      case 'trust':
+        return 'bg-[#e3f2fd]';
+      case 'modern':
+        return 'bg-gradient-to-br from-[#fafafa] to-[#f5f5f5]';
       default:
         return 'bg-gray-100';
     }
@@ -37,23 +37,28 @@ export function App() {
   return <div className={`min-h-screen w-full transition-colors duration-500 ${getBgColor()} relative flex items-center justify-center overflow-hidden`}>
       {/* Desktop Background Experience */}
       <div className="absolute inset-0 z-0 hidden lg:block">
-        {activeVariant === 'warm' && <div className="w-full h-full relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#d4735e]/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#7a9b76]/10 rounded-full blur-[80px] -translate-x-1/4 translate-y-1/4"></div>
-            <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-[#d4735e]/5 rounded-full blur-xl"></div>
-            <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-[#7a9b76]/5 rounded-full blur-xl"></div>
+        {activeVariant === 'empowerment' && <div className="w-full h-full relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#e91e8c]/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4"></div>
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#7b2cbf]/10 rounded-full blur-[80px] -translate-x-1/4 translate-y-1/4"></div>
+            <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-[#e91e8c]/5 rounded-full blur-xl"></div>
+            <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-[#7b2cbf]/5 rounded-full blur-xl"></div>
           </div>}
 
-        {activeVariant === 'bold' && <div className="w-full h-full relative overflow-hidden bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1a1f3a] via-[#1a1f3a] to-[#0f1225] opacity-90"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff6b6b] via-[#4ecdc4] to-[#ff6b6b]"></div>
+        {activeVariant === 'luxury' && <div className="w-full h-full relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#000000]"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#d4af37]"></div>
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-30"></div>
           </div>}
 
-        {activeVariant === 'minimal' && <div className="w-full h-full relative bg-[#f9f9f9]">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        {activeVariant === 'trust' && <div className="w-full h-full relative bg-[#e3f2fd]">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1565c012_1px,transparent_1px),linear-gradient(to_bottom,#1565c012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1565c0]/5 rounded-full blur-[100px]"></div>
           </div>}
 
-        {activeVariant === 'vibrant' && <div className="w-full h-full relative bg-gradient-to-br from-[#ff6b35] via-[#e63946] to-[#6a4c93] opacity-50 blur-3xl scale-110"></div>}
+        {activeVariant === 'modern' && <div className="w-full h-full relative bg-gradient-to-br from-[#fafafa] to-[#f5f5f5]">
+            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#e91e8c]/5 rounded-full blur-[120px]"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#7b2cbf]/5 rounded-full blur-[100px]"></div>
+          </div>}
       </div>
 
       {/* Mobile Frame */}
@@ -71,21 +76,21 @@ export function App() {
         <div className="px-2 py-1 text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
           Select Theme
         </div>
-        <button onClick={() => setActiveVariant('warm')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'warm' ? 'bg-[#d4735e] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
-          <div className="w-4 h-4 rounded-full bg-[#d4735e] border-2 border-white/50"></div>
-          <span className="font-medium">Warm Community</span>
+        <button onClick={() => setActiveVariant('empowerment')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'empowerment' ? 'bg-gradient-to-r from-[#e91e8c] to-[#c9184a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+          <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#e91e8c] to-[#7b2cbf] border-2 border-white/50"></div>
+          <span className="font-medium">Empowerment Pink</span>
         </button>
-        <button onClick={() => setActiveVariant('bold')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'bold' ? 'bg-[#1a1f3a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
-          <div className="w-4 h-4 rounded-full bg-[#1a1f3a] border-2 border-[#4ecdc4]"></div>
-          <span className="font-medium">Bold Professional</span>
+        <button onClick={() => setActiveVariant('luxury')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'luxury' ? 'bg-[#0a0a0a] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+          <div className="w-4 h-4 rounded-full bg-[#0a0a0a] border-2 border-[#d4af37]"></div>
+          <span className="font-medium">Luxury Pro</span>
         </button>
-        <button onClick={() => setActiveVariant('minimal')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'minimal' ? 'bg-[#2d5016] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
-          <div className="w-4 h-4 rounded-full bg-white border-2 border-[#2d5016]"></div>
-          <span className="font-medium">Minimal Clarity</span>
+        <button onClick={() => setActiveVariant('trust')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'trust' ? 'bg-[#1565c0] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+          <div className="w-4 h-4 rounded-full bg-[#1565c0] border-2 border-white/50"></div>
+          <span className="font-medium">Trust Blue</span>
         </button>
-        <button onClick={() => setActiveVariant('vibrant')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'vibrant' ? 'bg-gradient-to-r from-[#ff6b35] to-[#6a4c93] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
-          <div className="w-4 h-4 rounded-full bg-[#ffd23f] border-2 border-white/50"></div>
-          <span className="font-medium">Vibrant Energy</span>
+        <button onClick={() => setActiveVariant('modern')} className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeVariant === 'modern' ? 'bg-gradient-to-r from-[#e91e8c] to-[#7b2cbf] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}>
+          <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#fafafa] to-[#e91e8c] border-2 border-gray-300"></div>
+          <span className="font-medium">Modern Chic</span>
         </button>
       </div>
 
