@@ -35,11 +35,11 @@ export function DriverSpotlight() {
           <h2 className="text-xl font-bold text-[#2d2d2d] font-sans">
             Meet your ChaufHERs
           </h2>
-          <p className="text-xs text-[#7b2cbf] font-medium mt-0.5">
+          <p className="text-xs text-[#6a1b9a] font-medium mt-0.5">
             All verified female drivers
           </p>
         </div>
-        <button className="text-[#e91e8c] text-sm font-medium hover:text-[#c9184a] transition-colors">
+        <button className="text-[#d91e72] text-sm font-medium hover:text-[#c8175d] transition-colors">
           View all
         </button>
       </div>
@@ -47,11 +47,11 @@ export function DriverSpotlight() {
       <div className="flex overflow-x-auto px-6 pb-6 gap-5 no-scrollbar snap-x">
         {drivers.map(driver => <div key={driver.id} className="flex flex-col items-center flex-shrink-0 snap-start">
             <div className="relative mb-3">
-              <div className="w-20 h-20 rounded-full p-1 border-2 border-dashed border-[#e91e8c]/30">
+              <div className="w-20 h-20 rounded-full p-1 border-2 border-dashed border-[#d91e72]/30">
                 <img src={driver.image} alt={driver.name} className="w-full h-full rounded-full object-cover border-2 border-white shadow-md" />
               </div>
               {/* Safety Badge - Guardrail: Safety signals explicit */}
-              {driver.verified && <div className="absolute -top-1 -right-1 bg-[#7b2cbf] rounded-full p-1 shadow-sm border-2 border-white">
+              {driver.verified && <div className="absolute -top-1 -right-1 bg-[#6a1b9a] rounded-full p-1 shadow-sm border-2 border-white">
                   <ShieldCheck size={12} className="text-white" strokeWidth={3} />
                 </div>}
               <div className="absolute -bottom-1 -right-1 bg-white rounded-full px-1.5 py-0.5 shadow-sm border border-[#faf8f5] flex items-center gap-0.5">

@@ -25,10 +25,10 @@ export function BottomNav() {
         const isActive = activeTab === item.id;
         const Icon = item.icon;
         return <button key={item.id} onClick={() => setActiveTab(item.id)} className="flex flex-col items-center justify-center w-16 h-full transition-all duration-300 relative">
-              <div className={`p-2 rounded-full transition-all duration-300 ${isActive ? 'bg-[#e91e8c]/10 translate-y-[-4px]' : 'bg-transparent'}`}>
-                <Icon size={24} className={`transition-colors duration-300 ${isActive ? 'text-[#e91e8c]' : 'text-[#999]'}`} strokeWidth={isActive ? 2.5 : 2} />
+              <div className={`p-2 rounded-full transition-all duration-300 ${isActive ? 'bg-[#d91e72]/10 translate-y-[-4px]' : 'bg-transparent'}`}>
+                <Icon size={24} className={`transition-colors duration-300 ${isActive ? 'text-[#d91e72]' : 'text-[#999]'}`} strokeWidth={isActive ? 2.5 : 2} />
               </div>
-              <span className={`text-[10px] font-medium mt-1 transition-all duration-300 ${isActive ? 'text-[#e91e8c] font-semibold' : 'text-[#999]'}`}>
+              <span className={`text-[10px] font-medium mt-1 transition-all duration-300 ${isActive ? 'text-[#d91e72] font-semibold' : 'text-[#999]'}`}>
                 {item.label}
               </span>
             </button>;

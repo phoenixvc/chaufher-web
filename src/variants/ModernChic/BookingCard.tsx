@@ -15,12 +15,12 @@ export function BookingCard() {
       <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-xl">
         <div className="space-y-4">
           <div className="bg-white/80 backdrop-blur-md rounded-2xl p-4 flex items-center gap-4 shadow-sm group focus-within:ring-2 ring-[#d4af37] transition-all">
-            <div className="w-3 h-3 rounded-full bg-[#e91e8c]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#d91e72]"></div>
             <input type="text" defaultValue="Sandton City, JHB" className="bg-transparent w-full outline-none text-[#2d2d2d] font-medium" />
           </div>
 
           <div className="bg-white/80 backdrop-blur-md rounded-2xl p-4 flex items-center gap-4 shadow-sm group focus-within:ring-2 ring-[#d4af37] transition-all">
-            <MapPin size={16} className="text-[#7b2cbf]" />
+            <MapPin size={16} className="text-[#6a1b9a]" />
             <input type="text" placeholder="Where to?" className="bg-transparent w-full outline-none text-[#2d2d2d] font-medium placeholder:text-gray-500" />
           </div>
         </div>

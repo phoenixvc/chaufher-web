@@ -28,17 +28,17 @@ export function RecentTrips() {
         x: 0
       }} transition={{
         delay: index * 0.1
-      }} className="w-full bg-white rounded-2xl p-4 shadow-sm border border-[#faf8f5] hover:shadow-md hover:border-[#e91e8c]/20 transition-all text-left group">
+      }} className="w-full bg-white rounded-2xl p-4 shadow-sm border border-[#faf8f5] hover:shadow-md hover:border-[#d91e72]/20 transition-all text-left group">
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#e91e8c]"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#d91e72]"></div>
                   <span className="text-sm font-medium text-[#2d2d2d]">
                     {trip.from}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 ml-3.5">
-                  <MapPin size={14} className="text-[#7b2cbf]" />
+                  <MapPin size={14} className="text-[#6a1b9a]" />
                   <span className="text-sm font-medium text-[#2d2d2d]">
                     {trip.to}
                   </span>
@@ -51,8 +51,8 @@ export function RecentTrips() {
                 <span className="text-sm font-bold text-[#2d2d2d]">
                   {trip.price}
                 </span>
-                <div className="p-1.5 rounded-full bg-[#e91e8c]/10 group-hover:bg-[#e91e8c] transition-colors">
-                  <RotateCcw size={14} className="text-[#e91e8c] group-hover:text-white transition-colors" />
+                <div className="p-1.5 rounded-full bg-[#d91e72]/10 group-hover:bg-[#d91e72] transition-colors">
+                  <RotateCcw size={14} className="text-[#d91e72] group-hover:text-white transition-colors" />
                 </div>
               </div>
             </div>

@@ -29,7 +29,7 @@ export function TrustBadges() {
           ease: 'easeOut',
           delay: index * 0.1 + 0.3
         }} className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-sm border border-[#faf8f5]">
-              <div className="p-2 bg-[#7b2cbf]/10 rounded-full text-[#7b2cbf]">
+              <div className="p-2 bg-[#6a1b9a]/10 rounded-full text-[#6a1b9a]">
                 <Icon size={20} strokeWidth={2} />
               </div>
               <span className="text-sm font-medium text-[#4a4a4a] font-sans">
