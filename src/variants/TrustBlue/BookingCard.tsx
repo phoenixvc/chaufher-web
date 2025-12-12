@@ -35,7 +35,7 @@ export function BookingCard() {
         </div>
 
         {/* CTA */}
-        <button className="w-full bg-[#1565c0] text-white py-4 px-6 flex justify-between items-center hover:bg-[#1e360e] transition-colors group">
+        <button className="w-full bg-[#1565c0] text-white py-4 px-6 flex justify-between items-center hover:bg-[#0d47a1] transition-colors group">
           <span className="text-sm font-medium tracking-wide uppercase">
             Request Driver
           </span>

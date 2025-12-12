@@ -50,7 +50,7 @@ export function BookingCard() {
         </div>
 
         {/* CTA Button */}
-        <button className="w-full mt-4 bg-[#d4af37] hover:bg-[#3dbdb4] active:translate-y-0.5 transition-all text-[#0a0a0a] rounded-lg py-4 font-bold text-lg uppercase tracking-wide flex items-center justify-center gap-3 group shadow-[0_0_20px_rgba(78,205,196,0.3)]">
+        <button className="w-full mt-4 bg-[#d4af37] hover:bg-[#b8860b] active:translate-y-0.5 transition-all text-[#0a0a0a] rounded-lg py-4 font-bold text-lg uppercase tracking-wide flex items-center justify-center gap-3 group shadow-[0_0_20px_rgba(212,175,55,0.3)]">
           <span>Request Ride</span>
           <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" strokeWidth={3} />
         </button>
