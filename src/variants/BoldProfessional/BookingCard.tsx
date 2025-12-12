@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Navigation, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight, DollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function BookingCard() {
   return <motion.div initial={{
@@ -18,7 +18,7 @@ export function BookingCard() {
           {/* Pickup Input */}
           <div className="relative group border-b border-white/10">
             <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#ff6b6b] transform rotate-45"></div>
-            <input type="text" placeholder="Current Location" className="w-full bg-transparent py-5 pl-10 pr-4 text-white placeholder:text-gray-500 outline-none font-medium text-lg focus:bg-white/5 transition-colors" defaultValue="128 Market St, San Francisco" />
+            <input type="text" placeholder="Current Location" className="w-full bg-transparent py-5 pl-10 pr-4 text-white placeholder:text-gray-500 outline-none font-medium text-lg focus:bg-white/5 transition-colors" defaultValue="Sandton City, Johannesburg" />
           </div>
 
           {/* Destination Input */}
@@ -37,11 +37,29 @@ export function BookingCard() {
             </button>)}
         </div>
 
+        {/* Pricing Info - Guardrail: Predictability */}
+        <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-gray-400">
+            <span className="text-lg font-bold font-mono">R</span>
+            <span className="text-sm font-mono uppercase tracking-wider">
+              Est. Fare
+            </span>
+          </div>
+          <span className="text-xl font-bold text-white font-mono">
+            R180-220
+          </span>
+        </div>
+
         {/* CTA Button */}
-        <button className="w-full mt-6 bg-[#4ecdc4] hover:bg-[#3dbdb4] active:translate-y-0.5 transition-all text-[#1a1f3a] rounded-lg py-4 font-bold text-lg uppercase tracking-wide flex items-center justify-center gap-3 group shadow-[0_0_20px_rgba(78,205,196,0.3)]">
+        <button className="w-full mt-4 bg-[#4ecdc4] hover:bg-[#3dbdb4] active:translate-y-0.5 transition-all text-[#1a1f3a] rounded-lg py-4 font-bold text-lg uppercase tracking-wide flex items-center justify-center gap-3 group shadow-[0_0_20px_rgba(78,205,196,0.3)]">
           <span>Request Ride</span>
           <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" strokeWidth={3} />
         </button>
+
+        {/* Cancellation Policy - Guardrail: Predictability */}
+        <p className="text-[10px] text-gray-500 text-center mt-3 uppercase tracking-widest font-mono">
+          Free cancellation • 5 min before pickup
+        </p>
       </div>
     </motion.div>;
 }

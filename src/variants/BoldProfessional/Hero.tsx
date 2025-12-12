@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bell, ShieldCheck } from 'lucide-react';
+import { Bell, ShieldAlert } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function Hero() {
   return <div className="relative bg-[#1a1f3a] pt-14 pb-20 px-6 overflow-hidden">
@@ -20,10 +20,16 @@ export function Hero() {
             ChaufHER
           </span>
         </div>
-        <button className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-white relative border border-white/10">
-          <Bell size={20} />
-          <span className="absolute top-2 right-2.5 w-2 h-2 bg-[#4ecdc4] rounded-full"></span>
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Emergency Button - Critical Safety Feature */}
+          <button className="p-2.5 rounded-lg bg-[#ff6b6b] hover:bg-[#ff5252] transition-colors text-white shadow-lg active:scale-95" aria-label="Emergency assistance">
+            <ShieldAlert size={18} strokeWidth={2.5} />
+          </button>
+          <button className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-white relative border border-white/10">
+            <Bell size={20} />
+            <span className="absolute top-2 right-2.5 w-2 h-2 bg-[#4ecdc4] rounded-full"></span>
+          </button>
+        </div>
       </div>
 
       {/* Main Content */}
@@ -39,9 +45,9 @@ export function Hero() {
         ease: 'circOut'
       }}>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4ecdc4]/10 border border-[#4ecdc4]/20 mb-4">
-            <ShieldCheck size={14} className="text-[#4ecdc4]" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#4ecdc4] animate-pulse"></div>
             <span className="text-[#4ecdc4] text-xs font-bold tracking-wide uppercase">
-              Verified Drivers Only
+              100% Verified Drivers
             </span>
           </div>
           <h1 className="font-sans font-bold text-5xl text-white leading-[1] mb-4 tracking-tight">

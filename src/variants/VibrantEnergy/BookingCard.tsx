@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, DollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function BookingCard() {
   return <motion.div initial={{
@@ -17,7 +17,7 @@ export function BookingCard() {
         <div className="space-y-4">
           <div className="bg-white/80 backdrop-blur-md rounded-2xl p-4 flex items-center gap-4 shadow-sm group focus-within:ring-2 ring-[#ffd23f] transition-all">
             <div className="w-3 h-3 rounded-full bg-[#ff6b35]"></div>
-            <input type="text" defaultValue="128 Market St" className="bg-transparent w-full outline-none text-[#2d2d2d] font-medium" />
+            <input type="text" defaultValue="Sandton City, JHB" className="bg-transparent w-full outline-none text-[#2d2d2d] font-medium" />
           </div>
 
           <div className="bg-white/80 backdrop-blur-md rounded-2xl p-4 flex items-center gap-4 shadow-sm group focus-within:ring-2 ring-[#ffd23f] transition-all">
@@ -26,10 +26,24 @@ export function BookingCard() {
           </div>
         </div>
 
-        <button className="w-full mt-6 bg-[#ffd23f] text-[#2d2d2d] py-4 rounded-2xl font-bold text-lg shadow-[0_8px_20px_rgba(255,210,63,0.4)] hover:shadow-[0_12px_24px_rgba(255,210,63,0.5)] hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group">
+        {/* Pricing Info - Guardrail: Predictability */}
+        <div className="mt-5 pt-4 border-t border-white/20 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-white/80">
+            <span className="text-lg font-bold">R</span>
+            <span className="text-sm font-medium">Est. fare</span>
+          </div>
+          <span className="text-xl font-bold text-white">R180-220</span>
+        </div>
+
+        <button className="w-full mt-4 bg-[#ffd23f] text-[#2d2d2d] py-4 rounded-2xl font-bold text-lg shadow-[0_8px_20px_rgba(255,210,63,0.4)] hover:shadow-[0_12px_24px_rgba(255,210,63,0.5)] hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group">
           <span>Let's Go</span>
           <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
         </button>
+
+        {/* Cancellation Policy - Guardrail: Predictability */}
+        <p className="text-xs text-white/60 text-center mt-3">
+          Free cancellation up to 5 min before pickup
+        </p>
       </div>
     </motion.div>;
 }

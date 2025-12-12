@@ -1,14 +1,19 @@
 import React from 'react';
 import { Hero } from './Hero';
+import { TripStatus } from './TripStatus';
 import { BookingCard } from './BookingCard';
 import { DriverSpotlight } from './DriverSpotlight';
 import { TrustBadges } from './TrustBadges';
+import { RecentTrips } from './RecentTrips';
 import { BottomNav } from './BottomNav';
 export function WarmCommunity() {
   return <div className="min-h-screen bg-[#faf8f5] pb-24 font-sans text-[#2d2d2d] selection:bg-[#d4735e]/20 relative overflow-hidden">
-      {/* Mobile Content Container */}
       <div className="relative z-10">
         <Hero />
+
+        {/* Example: Show trip status when applicable - Guardrail: Status Clarity */}
+        {/* <TripStatus state="accepted" /> */}
+
         <div className="space-y-2">
           <BookingCard />
           <div className="mt-8">
@@ -17,6 +22,8 @@ export function WarmCommunity() {
           <div className="mt-2">
             <DriverSpotlight />
           </div>
+          <RecentTrips />
+
           {/* Promo Section */}
           <div className="px-6 py-4">
             <div className="bg-[#7a9b76]/10 rounded-3xl p-6 flex items-center justify-between border border-[#7a9b76]/20">

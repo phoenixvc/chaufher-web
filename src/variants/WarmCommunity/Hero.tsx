@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bell } from 'lucide-react';
+import { Bell, ShieldAlert } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function Hero() {
   return <div className="relative bg-cream-50 pt-12 pb-16 px-6 rounded-b-[3rem] overflow-hidden">
@@ -17,10 +17,16 @@ export function Hero() {
             ChaufHER
           </span>
         </div>
-        <button className="p-2 rounded-full bg-white/60 hover:bg-white transition-colors text-[#4a4a4a] relative shadow-sm">
-          <Bell size={20} />
-          <span className="absolute top-2 right-2.5 w-2 h-2 bg-[#d4735e] rounded-full border-2 border-white"></span>
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Emergency Button - Critical Safety Feature */}
+          <button className="p-2.5 rounded-full bg-[#d4735e] hover:bg-[#c06552] transition-colors text-white shadow-md active:scale-95" aria-label="Emergency assistance">
+            <ShieldAlert size={18} strokeWidth={2.5} />
+          </button>
+          <button className="p-2 rounded-full bg-white/60 hover:bg-white transition-colors text-[#4a4a4a] relative shadow-sm">
+            <Bell size={20} />
+            <span className="absolute top-2 right-2.5 w-2 h-2 bg-[#d4735e] rounded-full border-2 border-white"></span>
+          </button>
+        </div>
       </div>
 
       {/* Main Content */}

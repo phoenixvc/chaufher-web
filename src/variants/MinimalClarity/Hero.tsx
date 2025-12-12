@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, ShieldAlert } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function Hero() {
   return <div className="relative bg-white pt-12 pb-12 px-8">
@@ -8,9 +8,15 @@ export function Hero() {
         <span className="font-serif text-2xl font-bold text-[#2d5016] tracking-tight">
           ChaufHER.
         </span>
-        <button className="text-[#2d5016] hover:opacity-70 transition-opacity">
-          <Menu size={24} strokeWidth={1.5} />
-        </button>
+        <div className="flex items-center gap-3">
+          {/* Emergency Button - Critical Safety Feature */}
+          <button className="p-2 border border-[#2d5016] hover:bg-[#2d5016] hover:text-white transition-colors text-[#2d5016]" aria-label="Emergency assistance">
+            <ShieldAlert size={18} strokeWidth={1.5} />
+          </button>
+          <button className="text-[#2d5016] hover:opacity-70 transition-opacity">
+            <Menu size={24} strokeWidth={1.5} />
+          </button>
+        </div>
       </div>
 
       {/* Main Content */}
