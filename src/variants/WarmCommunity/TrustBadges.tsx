@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shield, Users, Heart, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 const badges = [{

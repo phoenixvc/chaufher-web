@@ -1,5 +1,5 @@
-import React from 'react';
-import { ShieldCheck, UserCheck, Heart, Clock } from 'lucide-react';
+import { ShieldCheck, Heart, Clock } from 'lucide-react';
+
 const stats = [{
   label: 'Rides Completed',
   value: '10k+',
@@ -16,7 +16,7 @@ const stats = [{
 export function TrustBadges() {
   return <section className="py-6 px-6">
       <div className="flex justify-between gap-2">
-        {stats.map((stat, index) => {
+        {stats.map((stat) => {
         const Icon = stat.icon;
         return <div key={stat.label} className="flex-1 bg-[#232946] p-3 rounded-lg border border-white/5 text-center">
               <Icon size={16} className="text-[#4ecdc4] mx-auto mb-2" />

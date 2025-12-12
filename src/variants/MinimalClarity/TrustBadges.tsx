@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shield, CheckCircle, Heart } from 'lucide-react';
 export function TrustBadges() {
   return <section className="py-8 px-8 border-t border-gray-100">

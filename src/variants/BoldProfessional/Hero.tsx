@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bell, ShieldAlert } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function Hero() {

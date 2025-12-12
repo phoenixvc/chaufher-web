@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { WarmCommunity } from './variants/WarmCommunity';
 import { BoldProfessional } from './variants/BoldProfessional';
 import { MinimalClarity } from './variants/MinimalClarity';
 import { VibrantEnergy } from './variants/VibrantEnergy';
-import { Monitor, Smartphone, Layout } from 'lucide-react';
 type Variant = 'warm' | 'bold' | 'minimal' | 'vibrant';
 export function App() {
   const [activeVariant, setActiveVariant] = useState<Variant>('warm');

@@ -1,6 +1,4 @@
-import React from 'react';
 import { Hero } from './Hero';
-import { TripStatus } from './TripStatus';
 import { BookingCard } from './BookingCard';
 import { DriverSpotlight } from './DriverSpotlight';
 import { TrustBadges } from './TrustBadges';

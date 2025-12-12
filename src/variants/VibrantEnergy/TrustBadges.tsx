@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shield, Heart, Zap } from 'lucide-react';
 export function TrustBadges() {
   return <div className="px-6 grid grid-cols-3 gap-3">

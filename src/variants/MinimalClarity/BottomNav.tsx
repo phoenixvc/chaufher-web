@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 export function BottomNav() {
   const [activeTab, setActiveTab] = useState('Home');
   const tabs = ['Home', 'Book', 'Account'];

@@ -1,5 +1,4 @@
-import React from 'react';
-import { MapPin, Navigation, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function BookingCard() {
   return <motion.div initial={{

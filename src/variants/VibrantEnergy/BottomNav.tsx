@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Home, Compass, User } from 'lucide-react';
 export function BottomNav() {
   const [activeTab, setActiveTab] = useState('home');

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Clock, Navigation, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 type TripState = 'awaiting' | 'accepted' | 'arriving' | 'started';

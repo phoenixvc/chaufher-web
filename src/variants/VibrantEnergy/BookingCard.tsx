@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, MapPin, DollarSign } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 export function BookingCard() {
   return <motion.div initial={{
