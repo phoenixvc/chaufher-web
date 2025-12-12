@@ -6,6 +6,11 @@ A browser-based operational portal empowering guardians, operators, administrato
 
 ChaufHER Web complements the ChaufHER mobile experience by offering robust tools for real-time ride oversight, incident escalation, organizational controls, and compliance reporting. The platform uniquely addresses the needs of stressed shift workers seeking safe commutes, guardians arranging transport for dependents, and administrators managing drivers and routes—all through an interface optimized for clarity and urgent operational response.
 
+## Infrastructure
+
+This project uses centralized infrastructure and deployment workflows defined in the ChaufHER Infra repository: https://github.com/phoenixvc/chaufher-infra. For frontend integration guidance, environment variables, and deployment checklists see: https://github.com/phoenixvc/chaufher-infra/blob/main/MOBILE_CHECKLIST.md
+
+
 ### Key Features
 
 - **Real-time Ride Tracking:** Live route monitoring, ETA updates, and safety signal handling
